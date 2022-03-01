@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
@@ -52,11 +53,13 @@ import com.zsh.sight.MyApplication;
 import com.zsh.sight.R;
 import com.zsh.sight.Utils.HttpUtils;
 import com.zsh.sight.Utils.NavigationIconClickListener;
+import com.zsh.sight.Utils.ScreenShotUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +88,7 @@ public class LocateFragment extends Fragment implements TencentLocationListener 
     private boolean isPoint = true;
     private IntentFilter intentFilter;
     private BroadcastReceiver mReceiver;
+    private FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -160,9 +164,9 @@ public class LocateFragment extends Fragment implements TencentLocationListener 
         mActivity.unregisterReceiver(mReceiver);
     }
     void init(View view){
-        bt_set = view.findViewById(R.id.set);
-        bt_showPath = view.findViewById(R.id.show_path);
-        bt_refresh = view.findViewById(R.id.refresh);
+        //bt_set = view.findViewById(R.id.set);
+/*        bt_showPath = view.findViewById(R.id.show_path);
+        bt_refresh = view.findViewById(R.id.refresh);*/
         show_status = view.findViewById(R.id.show_status);
         tencentLocationManager = TencentLocationManager.getInstance(getContext());
         tencentLocationRequest = TencentLocationRequest.create();
@@ -173,7 +177,7 @@ public class LocateFragment extends Fragment implements TencentLocationListener 
         tencentMap.setMapStyle(TencentMap.MAP_TYPE_NORMAL);
         CameraUpdate cameraUpdate = CameraUpdateFactory.zoomTo(15);
         tencentMap.moveCamera(cameraUpdate);
-        bt_set.setOnClickListener(new View.OnClickListener() {
+        /*bt_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isPoint){
@@ -190,8 +194,8 @@ public class LocateFragment extends Fragment implements TencentLocationListener 
                 }
                 view.invalidate();
             }
-        });
-        bt_showPath.setOnClickListener(new View.OnClickListener() {
+        });*/
+/*        bt_showPath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 JSONObject jsonObject = new JSONObject();
@@ -220,8 +224,22 @@ public class LocateFragment extends Fragment implements TencentLocationListener 
                 }
                 tencentLocationManager.requestLocationUpdates(tencentLocationRequest, LocateFragment.this);
             }
+        });*/
+        floatingActionButton = view.findViewById(R.id.help_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mActivity, HelpActivity.class);
+                Bitmap bitmap = ScreenShotUtil.screenShot(mActivity);
+                try {
+                    String path = ScreenShotUtil.save(bitmap, mActivity, Bitmap.CompressFormat.JPEG, true);
+                    intent.putExtra("path", path);
+                    startActivity(intent);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         });
-
     }
 
     public void setShow_status(int status){

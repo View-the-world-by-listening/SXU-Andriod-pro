@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class HelpFragment extends Fragment {
 
-    private ImageView bt_help1, bt_help2, bt_help3, bt_join;
+    private ImageView bt_help1, bt_help2, bt_help3, help1_big;
     private boolean help1, help2, help3;
     private View view;
     private TrunkActivity mActivity;
@@ -82,26 +82,31 @@ public class HelpFragment extends Fragment {
         bt_help1 = view.findViewById(R.id.help1);
         bt_help2 = view.findViewById(R.id.help2);
         bt_help3 = view.findViewById(R.id.help4);
+        help1_big = view.findViewById(R.id.help1_big);
         help1 = false;
         help2 = false;
         help3 = false;
 
+        help1_big.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                help1_big.setVisibility(View.INVISIBLE);
+                help1_big.setClickable(false);
+                bt_help1.setVisibility(View.VISIBLE);
+                bt_help1.setClickable(true);
+                Intent intent = new Intent(mActivity, TRTCCActivity.class);
+                intent.putExtra("mode", 1);
+                intent.putExtra("roomId", roomID);
+                startActivity(intent);
+            }
+        });
+
         bt_help1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if(help1){
-                    help1 = false;
-                    Intent intent = new Intent(mActivity, TRTCCActivity.class);
-                    intent.putExtra("mode", 1);
-                    intent.putExtra("roomId", roomID);
-                    startActivity(intent);
-                }
-                else{
-                    help1 = true;
-                    Glide.with(getContext()).load(R.drawable.help1_big)
-                            .override(300,200)
-                            .into(bt_help1);
-                }
-
+                bt_help1.setVisibility(View.INVISIBLE);
+                bt_help1.setClickable(false);
+                help1_big.setVisibility(View.VISIBLE);
+                help1_big.setClickable(true);
             }
         });
         bt_help2.setOnClickListener(new View.OnClickListener() {

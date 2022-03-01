@@ -46,6 +46,10 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".feature.HelpActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".recruit.ResumeActivity"
             android:exported="true" />
         <activity

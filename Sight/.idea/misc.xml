@@ -17,12 +17,16 @@
         <entry key="..\:/android_git/Sight/app/src/main/res/drawable/edit_border.xml" value="0.15104166666666666" />
         <entry key="..\:/android_git/Sight/app/src/main/res/drawable/ic_baseline_comment_24.xml" value="0.27760416666666665" />
         <entry key="..\:/android_git/Sight/app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.27760416666666665" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.22777777777777777" />
         <entry key="..\:/android_git/Sight/app/src/main/res/drawable/ic_outline_thumb_up_24.xml" value="0.27760416666666665" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/drawable/ic_phone.xml" value="0.22777777777777777" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_detect.xml" value="0.12715298885511653" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_edit.xml" value="0.1716485507246377" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_face.xml" value="0.16666666666666666" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_face_detect.xml" value="0.2" />
-        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_login.xml" value="0.152" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_help.xml" value="0.2" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_init.xml" value="0.2" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_login.xml" value="0.136" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_new_code.xml" value="0.19202898550724637" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_nick.xml" value="0.19202898550724637" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_path.xml" value="0.264" />
@@ -32,25 +36,34 @@
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_resume.xml" value="0.264" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_retrieve.xml" value="0.264" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_scoring.xml" value="0.19202898550724637" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_trtccactivity.xml" value="0.11359649122807018" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_trunk.xml" value="0.12228260869565218" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_trunk2.xml" value="0.11359649122807018" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/activity_video.xml" value="0.11359649122807018" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/backdrop.xml" value="0.20969202898550723" />
-        <entry key="..\:/android_git/Sight/app/src/main/res/layout/community_fragment.xml" value="0.2" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/bind_pro_dialog.xml" value="0.21452991452991452" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/buttombar.xml" value="0.11359649122807018" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/community_fragment.xml" value="0.2767094017094017" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/community_fragment_blind.xml" value="0.11068376068376068" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/community_frament.xml" value="0.22017543859649122" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/dialog_cancel_or_ok.xml" value="0.20969202898550723" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/dialog_normal.xml" value="0.1716485507246377" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/diary_item.xml" value="0.4" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_blind_mine_.xml" value="0.264" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_community.xml" value="0.31017964071856285" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_detect.xml" value="0.1716485507246377" />
-        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_help.xml" value="0.12" />
-        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_locate.xml" value="0.152" />
-        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_mine.xml" value="0.152" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_help.xml" value="0.2" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_locate.xml" value="0.264" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/fragment_mine.xml" value="0.264" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/grid_item.xml" value="0.20969202898550723" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/layout/link_item.xml" value="0.19429347826086957" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/pop_record_voice.xml" value="0.1716485507246377" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/register_successfully.xml" value="0.20969202898550723" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/setting_item.xml" value="0.20969202898550723" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/temp.xml" value="0.264" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/test.xml" value="0.4" />
         <entry key="..\:/android_git/Sight/app/src/main/res/layout/view_pager_img.xml" value="0.1716485507246377" />
+        <entry key="..\:/android_git/Sight/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21452991452991452" />
         <entry key="..\:/android_git/Sight/app/src/main/res/menu/bottom_nav_menu2.xml" value="0.26145833333333335" />
         <entry key="..\:/android_git/Sight/app/src/main/res/menu/mine_nav1.xml" value="0.26145833333333335" />
         <entry key="..\:/android_git/Sight/app/src/main/res/menu/shr_toolbar_menu.xml" value="0.26145833333333335" />

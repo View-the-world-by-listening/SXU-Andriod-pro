@@ -3,6 +3,7 @@ package com.zsh.sight.feature;
 import static com.zsh.sight.Utils.pxUtil.dip2px;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zsh.sight.R;
 import com.zsh.sight.Utils.CornerTransform;
 import com.zsh.sight.Utils.HttpUtils;
+import com.zsh.sight.Utils.ScreenShotUtil;
 import com.zsh.sight.adapter.Diary;
 import com.zsh.sight.adapter.ShareAdapter;
 import com.zsh.sight.recruit.RecruitActivity;
@@ -31,6 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,6 +50,7 @@ public class CommunityFragment extends Fragment implements AdapterView.OnItemCli
     private ImageView head_img;
     private String head_path;
     private final String DEFAULT_IMAGE_PATH = "android.resource://" + "com.zsh.sight" + "/";
+    private FloatingActionButton floatingActionButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,7 +98,7 @@ public class CommunityFragment extends Fragment implements AdapterView.OnItemCli
     // 初始化组件
     private void initView(){
         bt_edit = (ImageView) view.findViewById(R.id.edit);
-        head_img = (ImageView) view.findViewById(R.id.head_imgg);
+        floatingActionButton = view.findViewById(R.id.help_button);
         bt_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,11 +123,21 @@ public class CommunityFragment extends Fragment implements AdapterView.OnItemCli
                 Log.e("###", "in refresh done");
             }
         });
-        CornerTransform transformation = new CornerTransform(mActivity,dip2px(mActivity, 20));
-        transformation.setExceptCorner(false, true, true, false);
-        Glide.with(mActivity).load(R.drawable.default_head)
-                .transform(transformation)
-                .into(head_img);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mActivity, HelpActivity.class);
+                Bitmap bitmap = ScreenShotUtil.screenShot(mActivity);
+                try {
+                    String path = ScreenShotUtil.save(bitmap, mActivity, Bitmap.CompressFormat.JPEG, true);
+                    intent.putExtra("path", path);
+                    startActivity(intent);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
     @Override
@@ -149,4 +163,5 @@ public class CommunityFragment extends Fragment implements AdapterView.OnItemCli
         adapter.notifyDataSetChanged();
         refreshLayout.setRefreshing(false);
     }
+
 }

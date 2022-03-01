@@ -2,62 +2,104 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <ImageView
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:background="@drawable/backgound_new"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ImageView
+            android:id="@+id/custom_bkg"
+            android:layout_width="match_parent"
+            android:layout_height="227dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/button_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:src="@drawable/backbutton"
+        app:layout_constraintLeft_toLeftOf="@id/guideline17"
+        app:layout_constraintTop_toTopOf="@id/guideline23" />
+
+    <ImageView
+        android:id="@+id/edit_name"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:clickable="true"
+        android:src="@drawable/edit_button"
+        app:layout_constraintRight_toRightOf="@id/guideline18"
+        app:layout_constraintTop_toTopOf="@id/guideline23" />
 
     <ImageView
         android:id="@+id/mine_img"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-35dp"
         app:layout_constraintLeft_toLeftOf="@id/guideline17"
         app:layout_constraintTop_toTopOf="@id/guideline16" />
+
     <TextView
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Askeladd"
-        android:textSize="25sp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
+        android:text="Askeladd"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/mine_img"
-        app:layout_constraintTop_toBottomOf="@id/guideline16"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline16" />
 
     <TextView
         android:id="@+id/user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="123456789"
-        android:textSize="20sp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
+        android:text="123456789"
+        android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@id/mine_img"
-        app:layout_constraintTop_toBottomOf="@id/user_name"/>
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/edit_button"
-        app:layout_constraintRight_toLeftOf="@id/guideline18"
-        app:layout_constraintTop_toTopOf="@id/guideline16" />
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
 
     <LinearLayout
         android:id="@+id/serve_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        app:layout_constraintLeft_toLeftOf="@id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/barrier"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline17"
         app:layout_constraintTop_toBottomOf="@id/mine_img">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="服务时长"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -66,34 +108,37 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:text="10小时"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <View
+        android:id="@+id/barrier"
         android:layout_width="1dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="43dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="23dp"
         android:background="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/serve_text"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mine_img" />
 
     <LinearLayout
         android:id="@+id/score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:paddingEnd="20dp"
-        app:layout_constraintRight_toLeftOf="@id/guideline18"
+        app:layout_constraintEnd_toEndOf="@id/guideline18"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
         app:layout_constraintTop_toBottomOf="@id/mine_img">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="服务时长"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -102,147 +147,172 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:text="10小时"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:text="设置"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/guideline17"
-        app:layout_constraintTop_toBottomOf="@id/serve_text" />
 
     <LinearLayout
         android:id="@+id/edit_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
         android:orientation="horizontal"
+        android:paddingTop="0dp"
+        android:clickable="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="@id/guideline17"
-        app:layout_constraintTop_toBottomOf="@id/guideline15"
-        android:paddingTop="15dp">
+        app:layout_constraintTop_toBottomOf="@id/barrier">
+
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/edit_password"
-            android:layout_marginLeft="15dp"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/edit_password" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
             android:layout_weight="0.5"
             android:text="修改密码"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_vertical"/>
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/rightarrow"
-            android:layout_weight="0.2"/>
+            android:layout_weight="0.2"
+            android:src="@drawable/rightarrow" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/became_pro"
+        android:id="@+id/edit_guardian"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
         android:orientation="horizontal"
+        android:paddingTop="15dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="@id/guideline17"
-        app:layout_constraintTop_toBottomOf="@id/edit_password"
-        android:paddingTop="15dp">
+        app:layout_constraintTop_toBottomOf="@id/edit_password">
+
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/plus"
-            android:layout_marginLeft="15dp"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/plus" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
             android:layout_weight="0.5"
-            android:text="修改密码"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_vertical"/>
+            android:text="成为监护人"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/rightarrow"
-            android:layout_weight="0.2"/>
+            android:layout_weight="0.2"
+            android:src="@drawable/rightarrow" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/edit_face"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
         android:orientation="horizontal"
+        android:paddingTop="15dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="@id/guideline17"
-        app:layout_constraintTop_toBottomOf="@id/became_pro"
-        android:paddingTop="15dp">
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/upload"
-            android:layout_marginLeft="15dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="修改密码"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_vertical"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_guardian">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/upload" />
+
+        <TextView
+            android:layout_width="71dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/rightarrow"
-            android:layout_weight="0.2"/>
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.5"
+            android:text="上传人脸信息"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:src="@drawable/rightarrow" />
     </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/exit_login"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:src="@drawable/exit"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/help_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ic_phone"
+        app:tint="@color/white"
+        app:backgroundTint="#fd797a"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="75dp" />
+        app:layout_constraintGuide_begin="255dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="347dp" />
+        app:layout_constraintGuide_begin="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="347dp" />
+        app:layout_constraintGuide_end="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="348dp" />
+        app:layout_constraintGuide_end="428dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="28dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ public class PathActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_path);
+        setContentView(R.layout.bind_pro_dialog);
         myApplication = (MyApplication) getApplication();
         username = myApplication.getUsername();
         init();

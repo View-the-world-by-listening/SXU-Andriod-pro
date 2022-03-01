@@ -56,7 +56,7 @@ public class ShareAdapter extends android.widget.BaseAdapter {
 
         // 设置头像
         String headUrl = diaryList.get(position).getHeadPath(); //图片路径
-        CornerTransform transformation = new CornerTransform(mContext,dip2px(mContext, 20));
+        CornerTransform transformation = new CornerTransform(mContext,dip2px(mContext, 17));
         transformation.setExceptCorner(false, true, true, false);
         Glide.with(mContext).load(headUrl)
                 .transform(transformation)

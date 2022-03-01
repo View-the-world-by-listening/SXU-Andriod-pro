@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity{
     private TextInputEditText passwordEditText, accountEditText;
     private TextInputLayout password_input, account_input;
     private TextView tv_forget, tv_register;
-    private MaterialButton loginButton, faceButton;
+    private ImageView loginButton, faceButton;
     private MyApplication myApplication;
 
     // 常量
@@ -119,8 +120,8 @@ public class LoginActivity extends AppCompatActivity{
         account_input = (TextInputLayout) findViewById(R.id.account_input);
         passwordEditText = (TextInputEditText)findViewById(R.id.password_edit_text);
         password_input = (TextInputLayout) findViewById(R.id.password_input);
-        loginButton = (MaterialButton) findViewById(R.id.next_button);
-        faceButton = (MaterialButton) findViewById(R.id.face_button);
+        loginButton = (ImageView) findViewById(R.id.next_button);
+        faceButton = findViewById(R.id.head_login_image);
         tv_forget = (TextView) findViewById(R.id.forget_pwd);
         tv_register = (TextView) findViewById(R.id.register);
 
